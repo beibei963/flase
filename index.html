@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼豆色号转换器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>拼豆色号转换器</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="board-size">板子尺寸:</label>
+                <select id="board-size">
+                    <option value="52x52">52X52</option>
+                    <option value="40x40">40X40</option>
+                    <option value="30x30">30X30</option>
+                    <option value="20x20">20X20</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="image-upload">上传图片:</label>
+                <input type="file" id="image-upload" accept="image/*">
+            </div>
+            
+            <button id="convert-btn">转换为拼豆</button>
+        </div>
+        
+        <div class="preview">
+            <h2>预览</h2>
+            <div id="preview-container"></div>
+        </div>
+        
+        <div class="color-legend">
+            <h2>颜色图例</h2>
+            <div id="color-legend-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
