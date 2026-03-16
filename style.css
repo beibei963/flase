@@ -75,14 +75,97 @@ button:hover {
 
 .preview {
     margin-bottom: 30px;
+    width: 100%;
 }
 
 #preview-container {
-    display: inline-block;
+    display: block;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
     padding: 10px;
     border-radius: 4px;
+    width: 100%;
+    overflow: auto;
+}
+
+.preview-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-with-axis {
+    display: flex;
+    align-items: flex-start;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 10px;
+}
+
+.y-axis-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    text-align: right;
+    height: 20px;
+    line-height: 20px;
+    padding-right: 5px;
+    width: 30px;
+}
+
+.y-axis-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.y-axis-label-right {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    text-align: left;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 5px;
+    width: 30px;
+}
+
+.x-axis-container {
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.x-axis-container-bottom {
+    display: flex;
+    margin-top: 2px;
+}
+
+.x-axis {
+    display: flex;
+    margin-left: 0;
+}
+
+.x-axis-bottom {
+    display: flex;
+    margin-left: 0;
+}
+
+.x-axis-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.axis-spacer {
+    width: 30px;
+    height: 20px;
 }
 
 .pixel-grid {
@@ -101,6 +184,41 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.pixel-tooltip {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: normal;
+    text-align: center;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    min-width: 100px;
+}
+
+.pixel-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}
+
+.pixel:hover .pixel-tooltip {
+    opacity: 1;
+    visibility: visible;
 }
 
 .pixel-code {
